@@ -14,6 +14,8 @@ main =
         }
 
 -- model
+-- TodoCreator.elmで定義したModel型をもつ変数todoCreatorと
+-- TodoList.elmのModel型のtodoListをリストととしてもつModelを定義
 type alias Model = 
     { todoCreator : TodoCreator.Model
     , todoList : TodoList.Model

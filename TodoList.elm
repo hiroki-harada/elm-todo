@@ -6,15 +6,18 @@ import Html.Events exposing (onClick)
 
 
 -- model
+-- ToDo型を定義、完了フラグとtodoの内容を設定
 type alias ToDo = 
     { done : Bool
     , item : String
     }
 
+-- ToDo型のリストを持つtodoListを保持するModelを定義
 type alias Model = 
     { todoList : List ToDo
     }
 
+-- Model型のコンストラクタinitialModelを定義してtodoListにリストを代入
 initialModel : Model
 initialModel = 
     { todoList = 
@@ -24,14 +27,18 @@ initialModel =
         ]
     }
 
+-- MsgにはNoOpかAddNewのどちらかの処理を行う？
 type Msg
     = NoOp
     | AddNew
 
 
 -- update
+-- update関数を定義
 update : Msg -> ToDo -> Model -> ( Model, Cmd Msg )
+
 update message todo model =
+    -- messageの内容によって、処理を分岐させている
     case message of
         NoOp ->
             model ! []
@@ -62,6 +69,7 @@ viewItem model =
         text model.item
     ]
 
+-- update ボタンを定義、クリックでAddNew関数が発火する
 addButton : Html Msg
 addButton = 
     div [] 
