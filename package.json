@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/hiroki-harada/elm-todo#readme",
   "dependencies": {
-    "elm-format": "^0.8.2"
+    "elm-format": "^0.8.8"
   }
 }
